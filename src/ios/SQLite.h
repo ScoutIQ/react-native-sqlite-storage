@@ -13,7 +13,11 @@
  * See http://opensource.org/licenses/alphabetical for full text.
  */
 
-#import <React/RCTBridgeModule.h>
+#if __has_include(<React/RCTBridgeModule.h>)
+  #import <React/RCTBridgeModule.h>
+#else
+  #import "RCTBridgeModule.h"
+#endif
 
 // Used to remove dependency on sqlite3.h in this header:
 struct sqlite3;
@@ -40,7 +44,6 @@ typedef int WebSQLError;
 // Open / Close
 -(void) open: (NSDictionary *) options success:(RCTResponseSenderBlock)success error:(RCTResponseSenderBlock)error;
 -(void) close: (NSDictionary *) options success:(RCTResponseSenderBlock)success error:(RCTResponseSenderBlock)error;
--(void) attach: (NSDictionary *) options success:(RCTResponseSenderBlock)success error:(RCTResponseSenderBlock)error;
 -(void) delete: (NSDictionary *) options success:(RCTResponseSenderBlock)success error:(RCTResponseSenderBlock)error;
 
 // Batch processing interface
@@ -51,6 +54,4 @@ typedef int WebSQLError;
 -(void) backgroundExecuteSql:(NSDictionary *) options success:(RCTResponseSenderBlock)success error:(RCTResponseSenderBlock)error;
 -(void) executeSql:(NSDictionary *) options success:(RCTResponseSenderBlock)success error:(RCTResponseSenderBlock)error;
 
-// Echo Test
--(void) echoStringValue:(NSDictionary *) options success:(RCTResponseSenderBlock)success error:(RCTResponseSenderBlock)error;
 @end

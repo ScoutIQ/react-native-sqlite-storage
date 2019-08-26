@@ -18,25 +18,7 @@ The library has been tested with React 0.41 (and earlier) and XCode 7,8 - it wor
 
 Version 3.2 is the first version compatible with RN 0.40.
 
-# Version History
-
-v3.3.2
- 1. Yoga import fix
- 
-v3.3.1
- 1. Comment of SQLCipher code in iOS implementation as a quick fix. [Issue #155] (https://github.com/andpor/react-native-sqlite-storage/issues/155)
- 
-v3.3.0 (Extended thanks to dryganets for his significant contributions to this release)
- 1. Access to MutableDictonary openDBs properly synchronized [PR #130] (https://github.com/andpor/react-native-sqlite-storage/pull/130)
- 2. Database attach flow fixed. Threading model fix in order to have all queries executed in the same order [PR #131] (https://github.com/andpor/react-native-sqlite-storage/pull/131)
- 3. All statements and queries are closed in finally statements in order to fix SQLiteCipher corner case crashes [PR #132] (https://github.com/andpor/react-native-sqlite-storage/pull/132)
- 4. Minor style fix	in index.ios.callback.js and index.ios.promise.js [PR #136] (https://github.com/andpor/react-native-sqlite-storage/pull/136)
- 5. Fix determination logic for opened db [PR #139] (https://github.com/andpor/react-native-sqlite-storage/pull/139)
- 6. Clean up in lib/sqlite.core.js [PR #138] (https://github.com/andpor/react-native-sqlite-storage/pull/138)
- 7. Production grade logging for the Android plugin [PR #137] (https://github.com/andpor/react-native-sqlite-storage/pull/137)
- 8. Remove pre-honeycomb workaround code in Android that was causing issues in SQL Cipher [PR #147] (https://github.com/andpor/react-native-sqlite-storage/pull/147)
- 9. Fix broken Markdown headings [PR #153] (https://github.com/andpor/react-native-sqlite-storage/pull/153)
- 10. Drop usage of the dead rnpm repository [PR #148] (https://github.com/andpor/react-native-sqlite-storage/pull/148)
+#Version History
 
 v3.2.2
  1. Corrects the CocoaPods based development set-up instructions and includes sample Podfile. [Issue #125] (https://github.com/andpor/react-native-sqlite-storage/issues/125)
@@ -44,7 +26,7 @@ v3.2.2
 v3.2.1
  1. Sample apps in test directory adjusted for React Native 0.41 and plugability in AwesomeProject. [Issue #120] (https://github.com/andpor/react-native-sqlite-storage/issues/120)
  
-v3.2.0 
+v3.2 
  1. This is a backward incompatible release with baseline React Native 0.40 support.
  2. [React Native 0.40 compatibility fixes] (https://github.com/andpor/react-native-sqlite-storage/pull/110) - thanks K-Leon for this contribution
  
@@ -107,7 +89,7 @@ v2.0 - Full support for Promise API. Backward compatible with Callbacks.
 
 v1.0 - Initial release for iOS with full support of all operations based on plan JavaScript callbacks.
 
-# How to use (iOS):
+#How to use (iOS):
 
 #### Step 1. Install Dependencies
 
@@ -212,7 +194,7 @@ db.transaction((tx) => {
 });
 ```
 
-# How to use (Android):
+#How to use (Android):
 
 #### Step 1 - NPM Install
 
@@ -453,11 +435,11 @@ dbMaster.detach( 'second', successCallback, errorCallback );
 For sure, their is also Promise-support available for attach() and detach(), as shown in the example-application under the
 directory "examples".
 
-# Original Cordova SQLite Bindings from Chris Brody
+#Original Cordova SQLite Bindings from Chris Brody
 https://github.com/litehelpers/Cordova-sqlite-storage
 
 The issues and limitations for the actual SQLite can be found on this site.
 
-## Issues
+##Issues
 
 1. Android binds all numeric SQL input values to double. This is due to the underlying React Native limitation where only a Numeric type is available on the interface point making it ambiguous to distinguish integers from doubles. Once I figure out the proper way to do this I will update the codebase [(Issue #4141)] (https://github.com/facebook/react-native/issues/4141).
