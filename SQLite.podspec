@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author       = { package["author"]["name"] => package["author"]["email"] }
   s.platforms    = { :ios => "9.0", :tvos => "9.0" }
-  s.source       = { :git => "https://github.com/ScoutIQ/react-native-sqlite-storage, :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/ScoutIQ/react-native-sqlite-storage", :tag => "#{s.version}" }
   s.source_files = "src/ios/**/*.{h,m}", "src/common/**/*.{c,h}"
 
   s.dependency "React"
